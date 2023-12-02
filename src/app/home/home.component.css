@@ -1,0 +1,39 @@
+/* Define the style for the header */
+.c-header {
+  background-color: #f0f0f0; /* Light gray background */
+  padding: 20px; /* Add some space around the content */
+  text-align: center; /* Center the text */
+}
+
+/* Define the style for the headings */
+h1, h2, h3 {
+  font-family: Arial, sans-serif; /* Use a sans-serif font */
+  color: #333333; /* Dark gray color */
+  text-align: center;
+}
+
+/* Define the style for the links */
+a {
+  color: #0066cc; /* Blue color */
+  text-decoration: none; /* Remove the underline */
+}
+
+/* Define the style for the paragraph */
+p {
+  font-family: Georgia, serif; /* Use a serif font */
+  font-size: 18px; /* Set the font size */
+  line-height: 1.5; /* Set the line height */
+  margin: 10px; /* Add some margin around the text */
+  text-align: center;
+}
+
+.c-header img {
+  /* Set the width to 200 pixels */
+  width: 200px;
+  /* Set the height to auto to preserve the aspect ratio */
+  height: auto;
+  /* Use a circular shape */
+  border-radius: 50%;
+  /* Add some margin above the element */
+  margin-top: 10px;
+}

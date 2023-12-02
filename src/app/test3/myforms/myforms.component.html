@@ -1,0 +1,38 @@
+<div>
+    <form [formGroup]="myform">
+        <div>
+            <label for="name">Name</label>
+            <input id="name" type="text" formControlName="name">
+        </div>
+        <p *ngIf="(myform.controls['name'].touched || myform.controls['name'].dirty) && myform.controls['name'].invalid" class="myerror">
+            Name is invalid and compulsory. You should enter atleast 5 characters
+        </p>
+        <div>
+            <label for="Phone">Phone</label>
+            <input id="Phone" type="number" formControlName="mobile">
+        </div>
+        <p *ngIf="(myform.controls['mobile'].touched || myform.controls['mobile'].dirty) && myform.controls['mobile'].invalid" class="myerror">
+            Mobile is invalid and compulsory. You should enter valid Indian number.
+        </p>
+        <div>
+            <label for="email">Email</label>
+            <input id="email" type="text" formControlName="email">
+        </div>
+        <p *ngIf="(myform.controls['email'].touched || myform.controls['email'].dirty) && myform.controls['email'].invalid" class="myerror">
+            Email is invalid and compulsory. You should enter valid email
+        </p>
+        <div>
+            <label for="password">Password</label>
+            <input id="password" type="password" formControlName="password">
+        </div>
+        <p *ngIf="(myform.controls['password'].touched || myform.controls['password'].dirty) && myform.controls['password'].invalid" class="myerror">
+            Password is invalid and compulsory. You should enter valid Indian number.
+        </p>
+        <div>
+            <button type="button" [disabled]="myform.invalid" (click)="save()">Submit</button>
+            <button type="button" (click)="reset()">Reset</button>
+        </div>
+    </form>
+</div>
+
+<router-outlet></router-outlet>

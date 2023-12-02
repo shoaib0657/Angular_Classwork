@@ -1,0 +1,46 @@
+<header class="c-header">
+    <h1>Mohammad Shoaib Ansari</h1>
+    <h3> BT21CSE063 </h3>
+    <h3><a href="mailto:as920217.mdshoaibansari@gmail.com">as920217.mdshoaibansari@gmail.com</a></h3>
+</header>
+
+<div>
+    <div *ngFor="let item of qaList" class="qa-container">
+        
+        <!-- Question -->
+        <div class="question-section">
+            <p *ngFor="let paragraph of item.question.split('\n')" class="question">
+                {{ paragraph }}
+            </p>
+        </div>
+
+        <!-- Answer -->
+        <div class="answer-section">
+
+            <!-- Add a "Show Answer" button -->
+            <button class="show-answer-button" (click)="toggleAnswerVisibility(item)">Show Answer</button>
+            <br>
+
+
+            <ng-container *ngIf="item.imageUrl && item.showAnswer">
+                <img src="{{ item.imageUrl }}" alt="Image" class="answer-image" />
+            </ng-container>
+
+
+            <div *ngIf="item.showAnswer" class="answer-content">
+                <!-- Split answer by paragraphs and iterate over them -->
+                <div *ngFor="let paragraph of item.answer.split('\n')" class="answer-paragraph">
+                    <p>
+                        <ng-container *ngFor="let part of paragraph.split('**'); let isBold = odd">
+                            <ng-container *ngIf="isBold; else plainText">
+                                <strong>{{ part }}</strong>
+                            </ng-container>
+                            <ng-template #plainText>{{ part }}</ng-template>
+                        </ng-container>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

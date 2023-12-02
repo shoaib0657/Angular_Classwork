@@ -1,0 +1,44 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 15px;
+  }
+  
+  h3 {
+    margin: 0;
+    color: #333;
+  }
+  
+  img {
+    width: 100px;
+    height: 60px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    float: left;
+  }
+  
+  p {
+    margin: 5px 0;
+  }
+  
+  hr {
+    clear: both;
+    border: none;
+    border-top: 1px solid #eee;
+  }
+  

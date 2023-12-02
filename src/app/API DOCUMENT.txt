@@ -1,0 +1,73 @@
+Make a API Document
+
+1. Login 
+
+    Endpoint: http://109.106.255.69:2208/student/login
+    Request Type: POST
+    Payload(Data to send):
+    {
+        "email": "shoaib@gmail.com",
+        "password": "hello"
+    }
+    Headers: No headers
+    Response:
+    {
+        "status": 200,
+        "message": "Login done Successfully !",
+        "data": {
+            "id": 1091,
+            "studentName": "Shoaib",
+            "password": "hello",
+            "phone": "5874246257",
+            "email": "shoaib@gmail.com",
+            "rollNo": "BT21CSE063",
+            "createdOn": "2023-10-28T06:29:25.000Z",
+            "isActive": 1,
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50SWQiOjEwOTEsImlhdCI6MTY5ODQ3NDc4OCwiZXhwIjoxNjk4NDc4Mzg4fQ.FqnpymI4eL06B3gFW36_qYvjx1rGU5PHgrG3fgZ3kZ4"
+        }
+    }
+
+2. Signup
+    
+        Endpoint: http://109.106.255.69:2208/#/register
+        Request Type: POST
+        Payload(Data to send):
+        {
+            "studentName": "Shoaib",
+            "phone": 5874246257,
+            "email": "shoaib@gmail.com",
+            "rollNo": "BT21CSE063",
+            "password": "hello"
+        }
+        Headers: No headers
+        Response:
+        {
+            "status":200,
+            "message":"Student register successfully !"
+        }
+
+3. addContact
+    
+        Endpoint: http://109.106.255.69:2208/contact/addContact
+        Request Type: POST
+        Payload(Data to send):
+        {
+            "name": "Sohail Sir",
+            "phone": 7815413657,
+            "email": "khan@gmail.com",
+            "description": "He is a girl."
+        }
+        Headers: 
+        X-Access-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50SWQiOjEwOTEsImlhdCI6MTY5ODQ3NDc4OCwiZXhwIjoxNjk4NDc4Mzg4fQ.FqnpymI4eL06B3gFW36_qYvjx1rGU5PHgrG3fgZ3kZ4
+        Response:
+        {
+            "status":200,
+            "message":"Contact added successfully"
+        }
+
+4. Delete Student
+    
+    Endpoint: http://109.106.255.69:2208/contact/deleteContactById/2057
+    Request Type: DELETE
+    Payload(Data to send): No payload
+

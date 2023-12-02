@@ -1,0 +1,69 @@
+<div>
+  <button type="button" (click)="openAddContactForm()">Add Contact</button>
+  <button type="button" class="logout()"  routerLink="/applogin">LogOut</button>
+
+  <!-- Form for adding a new contact -->
+  <div *ngIf="showAddContactForm">
+      <form (ngSubmit)="add()">
+          <!-- Add form controls as needed, for example: -->
+          <label for="newContactName">Name:</label>
+          <input type="text" id="newContactName" name="newContactName" [(ngModel)]="newContact.name">
+
+          <label for="phone">Phone</label>
+          <input type="text" id="phone" name="phone" [(ngModel)]="newContact.phone">
+
+          <label for="newContactEmail">Email:</label>
+          <input type="email" id="newContactEmail" name="newContactEmail" [(ngModel)]="newContact.email">
+
+          <label for="newContactDescription">Description:</label>
+          <input type="text" id="newContactDescription" name="newContactDescription"
+              [(ngModel)]="newContact.description">
+
+          <button type="submit">Save Contact</button>
+      </form>
+  </div>
+
+
+  <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of contacts">
+          <td>{{ c.name }}</td>
+          <td>{{ c.email }}</td>
+          <td>{{ c.phone }}</td>
+          <td>{{ c.description }}</td>
+          <td>
+            <button (click)="openEditContactForm(c)">Edit</button>
+            <button (click)="deleteContact(c)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+<!-- Form for editing a contact -->
+<div *ngIf="showEditForm">
+  <form (ngSubmit)="editContact()">
+    <label for="editName">Name:</label>
+    <input type="text" id="editName" name="editName" [(ngModel)]="editedContact.name" required>
+
+    <label for="editEmail">Email:</label>
+    <input type="email" id="editEmail" name="editEmail" [(ngModel)]="editedContact.email" required>
+
+    <label for="editPhone">Phone:</label>
+    <input type="text" id="editPhone" name="editPhone" [(ngModel)]="editedContact.phone">
+
+    <label for="editDescription">Description:</label>
+    <textarea id="editDescription" name="editDescription" [(ngModel)]="editedContact.description"></textarea>
+
+    <button type="submit">Save Changes</button>
+  </form>
+</div>

@@ -1,0 +1,22 @@
+<!-- <h1>Login Page Of Auth</h1> -->
+
+<form [formGroup]="loginForm" (submit)="onSubmit()">
+    <h2>Login Page</h2>
+
+    <div class="form-control">
+        <label for="email">Email:</label>
+        <input id="email" type="email" formControlName="email" />
+    </div>
+    <p *ngIf="(loginForm.controls['email'].touched || loginForm.controls['email'].dirty) && loginForm.controls['email'].invalid" class="myerror">
+        Email is invalid and compulsory.
+    </p>
+    <div class="form-control">
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password" />
+    </div>
+    <p *ngIf="(loginForm.controls['password'].touched || loginForm.controls['password'].dirty) && loginForm.controls['password'].invalid" class="myerror">
+        Password is invalid and compulsory. Enter atleast 4 characters.
+    </p>
+
+    <button type="submit" [disabled]="!loginForm.valid">Login</button>
+</form>

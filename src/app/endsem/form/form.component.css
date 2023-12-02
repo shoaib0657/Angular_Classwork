@@ -1,0 +1,77 @@
+/* Use a custom font for the heading */
+h2 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+/* Style the form elements */
+form {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+}
+
+div {
+    margin: 10px 0;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+    font-weight: bold;
+}
+
+input {
+    display: inline-block;
+    width: 300px;
+    padding: 5px;
+    border: 1px solid #999;
+}
+
+button {
+    display: inline-block;
+    width: 100px;
+    padding: 10px;
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+/* Disable the save button when the form is invalid */
+button[disabled] {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+/* Style the table elements */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+tr:hover {
+    background-color: #ddd;
+}

@@ -1,0 +1,128 @@
+<!-- <p>signup works!</p> -->
+<form [formGroup]="signupForm" (submit)="onSubmit()">
+    <h2>Signup</h2>
+    <div>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" formControlName="fullName" />
+    </div>
+    <p *ngIf="(signupForm.controls['fullName'].touched || signupForm.controls['fullName'].dirty) && signupForm.controls['fullName'].invalid" class="myerror">
+        Name is invalid and compulsory.
+    </p>
+
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email" />
+    </div>
+    <p *ngIf="(signupForm.controls['email'].touched || signupForm.controls['email'].dirty) && signupForm.controls['email'].invalid" class="myerror">
+        Email is invalid and compulsory. You should enter valid email.
+    </p>
+
+    <div class="gender-group">
+        <label for="gender">Gender:</label>
+        <input type="radio" id="male" value="Male" formControlName="gender">
+        <label for="male"> Male</label>
+        <input type="radio" id="female" value="Female" formControlName="gender">
+        <label for="female"> Female</label><br>
+    </div>
+
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password" />
+    </div>
+    <p *ngIf="(signupForm.controls['password'].touched || signupForm.controls['password'].dirty) && signupForm.controls['password'].invalid" class="myerror">
+        Password is invalid and compulsory. Enter atleast 4 characters.
+    </p>
+
+
+    <div>
+        <label for="cnfpassword">Confirm Password:</label>
+        <input id="cnfpassword" type="password" formControlName="confirmPassword" />
+    </div>
+
+    <div *ngIf="signupForm.hasError('passwordMismatch') && (signupForm.get('confirmPassword')?.dirty || signupForm.get('confirmPassword')?.touched)">
+        <p class="myerror">Passwords do not match.</p>
+    </div>
+
+    <!-- <pre>
+        Form Error - {{ signupForm.errors | json }}
+    </pre> -->
+
+    <div>
+        <button type="submit" [disabled]="!signupForm.valid">Submit</button>
+        <button type="submit"  (click)="reset()">Reset</button>
+    </div>
+    
+</form>
+
+<!-- <h1>API Documentation</h1>
+<h2>Login</h2>
+Endpoint: http://109.106.255.69:2208/student/<br>
+Request Type: POST<br>
+Payload:<br>
+Email: "p@gmail.com"<br>
+Password: "123456"<br>
+Headers:<br>
+Etag: W/"53a-obkb5PGdTmJn+o8TSpEqsXZCmoI"<br>
+Response:<br>
+Status: 200<br>
+Message: "Login done Successfully !"<br>
+Data:<br>
+ID: 6<br>
+Student Name: "Pratik"<br>
+Password: "123456"<br>
+Phone: "8788202553"<br>
+Email: "p@gmail.com"<br>
+Roll No: "me14123"<br>
+Created On: "2022-08-25T05:49:28.000Z"<br>
+Is Active: 1<br>
+Token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHVkZW50SWQiOjYsImlhdCI6MTY5ODQ3NDU2NCwiZXhwIjoxNjk4NDc4MTY0fQ.pm6gDGzXalx5ubFgfosG4VcrR-9FlSoE2NBS8O97wG0"<br>
+<h2>Sign up</h2>
+Endpoint: http://109.106.255.69:2208/student/register<br>
+Request Type: POST<br>
+Payload:<br>
+Student Name: "Izaan J S"<br>
+Phone: 8793551330<br>
+Email: "izaanshaikh330@gmail.com"<br>
+Roll No: "27139"<br>
+Password: "123456"<br>
+Headers:<br>
+Etag: W/"37-lHAqsjbRGQXY7ge8jZxyCiTUAwk"<br>
+Response:<br>
+Status: 200<br>
+Message: "Student register successfully !"<br>
+<h2>Add contact</h2>
+Endpoint: http://109.106.255.69:2208/#/contact-form<br>
+Request Type: POST<br>
+Payload:<br>
+Name: "iz"<br>
+Phone: 9876543210<br>
+Email: "i@gmail.com"<br>
+Description: "qwerty"<br>
+Headers:<br>
+Etag: W/"35-b7gw7/IIVWwde+ljG1Kfl1uajeU"<br>
+Response:<br>
+Status: 200<br>
+Message: "Contact added successfully"<br>
+Delete contact<br>
+Endpoint: http://109.106.255.69:2208/#/contact-list<br>
+Request Type: DELETE<br>
+Payload: NULL<br>
+Headers:<br>
+Etag: W/"37-azJjXPIC3N1durfVTuVRP22HE7M"<br>
+Response:<br>
+Status: 200<br>
+Message: "Contact deleted successfully"<br>
+<h2>Edit contact</h2>
+Endpoint: http://109.106.255.69:2208/#/contact-form?id=2028 <br>
+Request Type: GET <br>
+Payload: <br>
+ID: 2028 <br>
+Name: "kbihbu"<br>
+Phone: "96545454"<br>
+Email: "kd@gail.com"<br>
+Description: "QWERRT"<br>
+Headers:<br>
+Etag: W/"37-lHAqsjbRGQXY7ge8jZxyCiTUAwk"<br>
+Response:<br>
+Status: 200<br>
+Message: "Contact updated successfully"<br> -->

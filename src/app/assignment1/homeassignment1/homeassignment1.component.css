@@ -1,0 +1,136 @@
+.c-header,
+  .c-footer {
+    background: #050505f3;
+    color: #fff;
+    text-align: center;
+    padding: 2em;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.6em;
+    margin-bottom: 20px;
+  }
+
+/* Style the QA container */
+.qa-container {
+    background-color: #1d1212d7;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style the question section */
+  .question-section {
+    font-size: 18px;
+    /* color: #333; */
+    margin-bottom: 10px;
+  }
+  
+  /* Style the question paragraphs */
+  .question {
+    font-size: 21px;
+    color: antiquewhite;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Style the answer section */
+  .answer-section {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-top: 10px;
+  }
+
+  /* Style the answer content */
+.answer-content {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+  
+  /* Style images in answers */
+  .answer-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+    height: 500px;
+    margin-top: 10px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer; /* Change cursor to a pointer when hovering */
+  }
+
+  /* Add a hover effect to scale the image slightly when hovered */
+.answer-image:hover {
+    transform: scale(1.05); /* You can adjust the scale factor as needed */
+  }
+  
+  /* Add a box shadow when the image is hovered for a more interactive feel */
+  .answer-image:hover {
+    box-shadow: 0 4px 4px rgba(255, 255, 255, 0.934); /* Customize the shadow as needed */
+  }
+  
+  /* Style answer paragraphs */
+  .answer-paragraph {
+    /* margin-bottom: 10px; */
+    background-color: #4A171E;
+  }
+
+  /* Style paragraph text */
+.answer-paragraph p {
+    margin: 0%;
+    padding: 5px;
+    color: #e1ad01; /* Text color */
+    font-weight: bold;
+    /* background-color: #F0A07C; */
+    font-family: Arial, sans-serif;
+    font-size: 18px; /* Adjust the font size as needed */
+    line-height: 1.6; /* Line spacing for better readability */
+    /* margin-bottom: 10px;  */
+  }
+  
+  /* Style bold text in answers */
+  .answer-paragraph strong {
+    font-weight: bold;
+    color: white; /* Change to your preferred color */
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  /* Add spacing between QA containers */
+  .qa-container + .qa-container {
+    margin-top: 20px;
+  }
+  
+  /* Optionally, add hover effect for a more interactive feel */
+  .qa-container:hover {
+    background-color: #0c0101f6;
+    transform: translateY(-2px);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Style the "Show Answer" button */
+.show-answer-button {
+    background-color: #007bff; /* Background color */
+    color: #fff; /* Text color */
+    padding: 8px 16px; /* Padding */
+    border: none; /* Remove border */
+    cursor: pointer;
+    outline: none; /* Remove outline */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth transitions */
+  }
+  
+  /* Hover effect */
+  .show-answer-button:hover {
+    background-color: #0056b3; /* Change color on hover */
+    transform: scale(1.05); /* Add a slight scale effect */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
+  }
+  
+  /* Active effect (when clicked) */
+  .show-answer-button:active {
+    transform: scale(0.95); /* Shrink the button slightly when clicked */
+  }

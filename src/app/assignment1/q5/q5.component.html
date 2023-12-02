@@ -1,0 +1,46 @@
+<div class="page-wrapper">
+    <div class="qa-container">
+
+        <!-- Question -->
+        <div class="question-section">
+            <p *ngFor="let paragraph of q.question.split('\n')" class="question">
+                {{ paragraph }}
+            </p>
+        </div>
+
+        <!-- Answer -->
+        <div class="answer-section">
+
+            <!-- Add a "Show Answer" button -->
+            <button
+                class="show-answer-button"
+                (click)="toggleAnswerVisibility(q)"
+            >
+                {{name}}
+            </button>
+            <br>
+            <button class="show-answer-button" routerLink="/assignment1/q6">Next Question</button>
+
+            <br>
+
+            <ng-container *ngIf="q.imageUrl && q.showAnswer">
+                <img src="{{ q.imageUrl }}" alt="Image" class="answer-image" />
+            </ng-container>
+
+            <div *ngIf="q.showAnswer" class="answer-content">
+                <!-- Split answer by paragraphs and iterate over them -->
+                <div *ngFor="let paragraph of q.answer.split('\n')" class="answer-paragraph">
+                    <p>
+                        <ng-container *ngFor="let part of paragraph.split('**'); let isBold = odd">
+                            <ng-container *ngIf="isBold; else plainText">
+                                <strong>{{ part }}</strong>
+                            </ng-container>
+                            <ng-template #plainText>{{ part }}</ng-template>
+                        </ng-container>
+                    </p>
+                </div>
+            </div>
+
+    </div>
+</div>
+

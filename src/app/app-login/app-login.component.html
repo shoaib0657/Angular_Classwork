@@ -1,0 +1,23 @@
+<h1>Login Page</h1>
+<div>
+    <form [formGroup]="loginForm">
+        <div>
+            <label for="email">Email</label>
+            <input type="text" id="email" formControlName="email">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" formControlName="password">
+        </div>
+        <div>
+            <button type="button" (click)="login()" >Login</button>
+        </div>
+        <div>
+            <p>
+                New User? <a routerLink="/appsignup">Signup</a>
+            </p>
+        </div>
+    </form>
+</div>
+
+<router-outlet></router-outlet>

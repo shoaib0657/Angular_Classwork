@@ -1,0 +1,151 @@
+/* Center the QA container on the page */
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #E6F7FF;
+}
+
+/* Style the QA container */
+.qa-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    background-color: #333; /* Darker background color */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly increased shadow */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    text-align: center;
+    min-height: 100px; /* Minimum height for the container */
+    min-width: 100%; /* Minimum width for the container */
+}
+
+/* Style the question section */
+.question-section {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Style the question paragraphs */
+.question {
+    font-size: 21px;
+    color: #fff; /* White text color */
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Style the answer section */
+.answer-section {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-top: 10px;
+}
+
+/* Style the answer content */
+.answer-content {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+/* Style images in answers */
+.answer-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%; /* Responsive image width */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 10px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Add a hover effect to scale the image slightly when hovered */
+.answer-image:hover {
+    transform: scale(1.05);
+}
+
+/* Add a box shadow when the image is hovered for a more interactive feel */
+.answer-image:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Slightly increased shadow on hover */
+}
+
+/* Style answer paragraphs */
+.answer-paragraph {
+    background-color: #4A171E;
+}
+
+/* Style paragraph text */
+.answer-paragraph p {
+    margin: 0;
+    color: #e1ad01;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Style bold text in answers */
+.answer-paragraph strong {
+    font-weight: bold;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Add spacing between QA containers */
+.qa-container + .qa-container {
+    margin-top: 20px;
+}
+
+/* Optionally, add hover effect for a more interactive feel */
+.qa-container:hover {
+    background-color: #444; /* Slightly darker background on hover */
+    transform: translateY(-2px);
+}
+
+/* Style the "Show Answer" button */
+.show-answer-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px; /* Add space below the button */
+}
+
+/* Hover effect */
+.show-answer-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Active effect (when clicked) */
+.show-answer-button:active {
+    transform: scale(0.95);
+}
+
+/* Style the centered button when showAnswer is true */
+.centered-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

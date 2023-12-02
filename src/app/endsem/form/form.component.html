@@ -1,0 +1,61 @@
+<h2>End Sem Question</h2>
+<form [formGroup]="myform">
+    <div>
+        <label for="name">Name</label>
+        <input id="name" type="text" formControlName="name">
+    </div>
+    <p *ngIf="(myform.controls['name'].touched || myform.controls['name'].dirty) && myform.controls['name'].invalid" class="myerror">
+        Name is compulsory.
+    </p>
+    <div>
+        <label for="email">Email</label>
+        <input id="email" type="text" formControlName="email">
+    </div>
+    <p *ngIf="(myform.controls['email'].touched || myform.controls['email'].dirty) && myform.controls['email'].invalid" class="myerror">
+        Email is invalid and compulsory.
+    </p>
+    <div>
+        <label for="mobile1">Mobile1</label>
+        <input id="mobile1" type="number" formControlName="mobile1">
+    </div>
+    <p *ngIf="(myform.controls['mobile1'].touched || myform.controls['mobile1'].dirty) && myform.controls['mobile1'].invalid" class="myerror">
+        Mobile1 is invalid and compulsory. Enter number starting with 6-9 and length 10.
+    </p>
+    <div>
+        <label for="mobile2">Mobile2</label>
+        <input id="mobile2" type="number" formControlName="mobile2">
+    </div>
+    <p *ngIf="(myform.controls['mobile2'].touched || myform.controls['mobile2'].dirty) && myform.controls['mobile2'].invalid" class="myerror">
+        Mobile2 is invalid. Enter number starting with 6-9 and length 10.
+    </p>
+    <div>
+        <label for="address">Address</label>
+        <input id="address" type="text" formControlName="address">
+    </div>
+    <p *ngIf="(myform.controls['address'].touched || myform.controls['address'].dirty) && myform.controls['address'].invalid" class="myerror">
+        Address is compulsory.
+    </p>
+    <div>
+        <button type="button" [disabled]="this.myform.invalid" (click)="save(myform.value)">Save</button>
+        <button type="button" (click)="reset()">Reset</button>
+    </div>
+</form>
+
+<table *ngIf="toDisplay">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile1</th>
+        <th>Mobile2</th>
+        <th>Address</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let data of entries">
+        <td>{{data.name}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.mobile1}}</td>
+        <td>{{data.mobile2}}</td>
+        <td>{{data.address}}</td>
+        <td><button type="button" (click)="delete(data)">Delete</button></td>
+    </tr>
+</table>

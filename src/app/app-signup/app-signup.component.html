@@ -1,0 +1,35 @@
+<h1>Signup Page</h1>
+<div>
+    <form [formGroup]="signupForm">
+        <div>
+            <label for="name">Student Name</label>
+            <input type="text" id="name" formControlName="name">
+        </div>
+        <div>
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" formControlName="phone">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="text" id="email" formControlName="email">
+        </div>
+        <div>
+            <label for="roll">Roll No</label>
+            <input type="text" id="roll" formControlName="roll">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" formControlName="password">
+        </div>
+        <div>
+            <button type="button" (click)="signup()">Register</button>
+        </div>
+        <div>
+            <p>
+                Already a member? <a routerLink="/applogin">Login</a>
+            </p>
+        </div>
+    </form>
+</div>
+
+<router-outlet></router-outlet>
